@@ -34,7 +34,7 @@ public class Robot : Agent
         rigBall.angularVelocity = Vector3.zero;
 
         // 隨機機器人位置
-        Vector3 posRobot = new Vector3(Random.Range(-1f, 1f), 0.1f, Random.Range(-2f, 0f));
+        Vector3 posRobot = new Vector3(Random.Range(-1f, 1f), 0.1f, Random.Range(-1f, 0f));
         transform.position = posRobot;
         
         // 隨機足球位置
