@@ -47,6 +47,7 @@ public class Robot : Agent
     public override void OnEpisodeBegin()
     {
         UpdateTextMessage();
+        countTotal++;
 
         // 重設剛體加速度與角度加速度
         rigRobot.velocity = Vector3.zero;
@@ -93,7 +94,6 @@ public class Robot : Agent
         // 球進入球門，成功：加 1 分並結束
         if (Ball.complete)
         {
-            countTotal++;
             countComplete++;
             UpdateTextMessage();
             SetReward(1);
@@ -103,7 +103,6 @@ public class Robot : Agent
         // 機器人或足球掉到地板下方，失敗：扣 1 分並結束
         if (transform.position.y < 0 || rigBall.position.y < 0)
         {
-            countTotal++;
             SetReward(-1);
             EndEpisode();
         }
